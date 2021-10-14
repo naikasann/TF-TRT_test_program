@@ -58,6 +58,7 @@ class TFTRTmodel:
                                                         max_workspace_size_bytes=max_workspace_size_bytes,
                                                         maximum_cached_engines=maximum_cached_engines,
                                                         weight_path=weight_path)
+	    return
         # Load TF-TRTmodel if it exists.
         print("TF-TRT model is exist.")
         print("Execute the process without generating a model.")
