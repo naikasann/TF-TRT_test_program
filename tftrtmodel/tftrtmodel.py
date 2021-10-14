@@ -88,7 +88,7 @@ class TFTRTmodel:
 		"""
         print("keras model -> tf model.")
         # Extract the file extension.
-        file_extension = os.path.splitext(keras_model)
+        file_extension = os.path.splitext(model_path)
         # Load the keras model for each extension
         if file_extension[1]==".json":
             model = model_from_json(open(model_path).read())
