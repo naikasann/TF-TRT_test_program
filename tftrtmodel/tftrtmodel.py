@@ -178,7 +178,7 @@ class TFTRTmodel:
 
         return self.infer
 
-    def predict(self, x, output_layer="predictions", measure_runtime=False):
+    def predict(self, x, output_layer="predictions"):
         """
             The actual inference is performed using the model of TF-TRT held in the class instance.
             Calling it from the outside executes the inference with the TF-TRT model.
@@ -220,5 +220,4 @@ if __name__ == "__main__":
                              max_workspace_size_byte=8000000000)
     # dammy input
     x = np.random.uniform(size=(3, 224, 224, 3)).astype(np.float32)
-    y, runtime = tftrt_model.predict(x, measure_runtime=True)
-    print("output : {}, measure time : {}".format(y, runtime))
+    y = tftrt_model.predict(x)
